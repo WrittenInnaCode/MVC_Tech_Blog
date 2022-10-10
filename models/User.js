@@ -19,12 +19,12 @@ User.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        name: {
+        username: {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
                 notNull: {
-                    msg: 'Please enter your name'
+                    msg: 'Please enter your username'
                 }
             },
         },
