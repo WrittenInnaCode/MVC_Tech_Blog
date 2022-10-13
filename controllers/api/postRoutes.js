@@ -42,7 +42,7 @@ router.post('/', withAuth, async (req, res) => {
             post_content: req.body.post_content,
             user_id: req.session.user_id,
         });
-        if (!req.session.user) {
+        if (!req.session.user_id) {
             return res.status(401).json({ msg: "Please login!" })
         }
         res.status(200).json(postData);

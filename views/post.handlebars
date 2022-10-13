@@ -1,0 +1,86 @@
+<div class="bg-info p-3 bg-opacity-50 text-white fw-bold">
+    <h2 class="mx-3">Comments</h2>
+</div>
+
+
+<div class="p-5" id="post-card">
+    <div class="card shadow mb-5">
+        <h4 class="card-header bg-info text-white">{{title}}</h4>
+        <p class="card-text m-3">{{post_content}}</p>
+        <div class="bg-info bg-opacity-50">
+            <div class="d-flex justify-content-end">
+                <div class="fw-bold text-white ms-4">{{user.username}}</div>
+                <div class="fw-bold text-white ms-4">{{format_date date_created}}</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{{!-- <div>
+    {{#if post.comment}} --}}
+    {{!-- <section class="card">
+        <div class="card-header">
+            <h3>Comments</h3>
+        </div>
+
+        <div class="card-body">
+            {{#each post.comment}}
+            <div> --}}
+                {{!-- <p>
+                    {{comment_content}}
+                </p> --}}
+                {{!-- <p>
+                    &mdash; {{User.username}}, {{format_date post.date_created}}
+                </p>
+            </div>
+            {{/each}}
+        </div>
+    </section> --}}
+    {{!-- {{/if}}
+</div> --}}
+
+
+<div>
+    {{#if post.comment}}
+    <div class="card-body">
+        {{#each post.comment}}
+        <div class="p-5" id="post-card">
+            <div class="card shadow mb-5">
+                <p>
+                    {{comment_content}}
+                </p>
+                <div class="bg-info bg-opacity-50">
+                    <div class="d-flex justify-content-end">
+                        <div class="fw-bold text-white ms-4">{{User.username}}</div>
+                        <div class="fw-bold text-white ms-4">{{format_date date_created}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+    {{/if}}
+</div>
+
+
+
+
+
+
+
+
+{{!-- add a comment --}}
+<div id="comment">
+    <div class="p-5 mb-5">
+        <div class="mb-3">
+            <label for="comment" class="form-label">Comment:</label>
+            <textarea class="form-control" rows="3"></textarea>
+        </div>
+        <div aria-label="Basic outlined example">
+            <button type="click" class="btn btn-outline-success">Submit</button>
+        </div>
+    </div>
+</div>
+
+<script src="/js/comment.js"></script>

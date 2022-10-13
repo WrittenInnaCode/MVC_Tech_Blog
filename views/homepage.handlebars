@@ -1,9 +1,35 @@
+{{!-- <!-- Loop over each object in the projects array -->
+{{#each posts as |post| }} --}}
+{{!-- <div class="row mb-4 project">
+  <div class="col-md-5">
+    <h2>
+      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
+      <a href="/post/{{post.id}}">{{post.title}}</a>
+    </h2>
+   
+    <p>Created by {{post.user.username}} on {{format_date post.date_created}}</p>
+  </div>
+  <div class="col-md-7">
+    <p>
+      {{post.post_content}}
+    </p>
+  </div>
+</div> --}}
+{{!-- {{/each}} --}}
 
-{{#each posts as |post|}}
-
-{{> post-info post }}
+<!-- Loop over each object in the projects array -->
+{{#each posts as |post| }}
+<div class="p-5" id="post-card">
+    <div class="card shadow mb-5">
+        <h4 class="card-header bg-info text-white"><a href="/post/{{post.id}}">{{post.title}}</a></h4>
+        <p class="card-text m-3">{{post.post_content}}</p>
+        <div class="bg-info bg-opacity-50">
+            <div class="d-flex justify-content-end">
+                <div class="fw-bold text-white ms-4">{{post.user.username}}</div>
+                <div class="fw-bold text-white ms-4">{{format_date post.date_created}}</div>
+                {{!-- <div class="fw-bold text-white ms-4 me-3">comments</div> --}}
+            </div>
+        </div>
+    </div>
 </div>
-
-{{else}}
-<h6 class="pb-4 has-text-centered is-italic">there are currently no posts</h6>
 {{/each}}
