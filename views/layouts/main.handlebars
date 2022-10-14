@@ -15,27 +15,24 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg bg-light">
+    <nav class="navbar navbar-expand-lg bg-light pb-5">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">writteninnacode_TechBlog</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <a class="navbar-brand" href="/">writteninnacode_TechBlog</a>
+            <div id="navbarNav">
                 <ul class="navbar-nav">
+                    <!-- Conditionally render login or logout links -->
+                    {{#if logged_in}}
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link" href="/dashboard">Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Dashboard</a>
+                        <button id="logout" class="btn btn-outline-danger">Logout</button>
                     </li>
+                    {{else}}
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Login</a>
+                        <a class="nav-link" href="/login">Login</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Logout</a>
-                    </li>
+                    {{/if}}
                 </ul>
             </div>
         </div>
@@ -43,17 +40,23 @@
 
 
     <main>
-
-{{{ body }}}
+        <!-- Render the sub layout -->
+        {{{ body }}}
 
     </main>
 
-<script src=""></script>
+    <!-- Render script for logged in users only -->
+    {{#if logged_in}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
+
+
+    <footer class="flex-row justify-center">
+        &copy;
+        <script>document.write(new Date().getFullYear());</script> Inna Sherstnyova
+    </footer>
+
 
 </body>
 
 </html>
-
-
-
-{{!-- footer --}}

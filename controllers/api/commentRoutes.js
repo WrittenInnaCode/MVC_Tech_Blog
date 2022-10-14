@@ -37,12 +37,11 @@ router.get('/:id', async (req, res) => {
 router.post('/', withAuth, async (req, res) => {
     try {
         const commentData = await Comment.create({
-            // title: req.body.title,
             comment_content: req.body.comment_content,
             user_id: req.session.user_id,
-            blog_id: req.body.blog_id
+            post_id: req.body.post_id
         });
-        if (!req.session.user) {
+        if (!req.session.user_id) {
             return res.status(401).json({ msg: "Please login!" })
         }
 
@@ -61,10 +60,7 @@ router.put("/:id", withAuth, async (req, res) => {
                 user_id: req.session.user_id
             }
         });
-        // if (!commentData) {
-        //     res.status(404).json({ message: 'No comment found with this id!' });
-        //     return;
-        // }
+
         if (!req.session.user) {
             return res.status(401).json({ msg: "Please login!" })
         }
@@ -88,10 +84,6 @@ router.delete('/:id', withAuth, async (req, res) => {
         if (!req.session.user) {
             return res.status(401).json({ msg: "Please login!" })
         }
-        // if (!commentData) {
-        //     res.status(404).json({ message: 'No comment found with this id!' });
-        //     return;
-        // }
 
         res.status(200).json(commentData);
     } catch (err) {

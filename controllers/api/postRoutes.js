@@ -86,10 +86,6 @@ router.delete('/:id', withAuth, async (req, res) => {
         if (!req.session.user) {
             return res.status(401).json({ msg: "Please login!" })
         }
-        // if (!postData) {
-        //     res.status(404).json({ message: 'No post found with this id!' });
-        //     return;
-        // }
 
         res.status(200).json(postData);
     } catch (err) {

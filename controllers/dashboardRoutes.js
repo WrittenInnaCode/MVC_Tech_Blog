@@ -5,13 +5,13 @@ const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, async (req,res) => {
     try {
-        const userData = await User.findAll(req.session.user_id, {
-            attributes: { exclude: ['password'] },
-            include: [{ model: Post }],
+        const userData = await Post.findAll({
+            where: {user_id: req.session.user_id},
+            include: [User]
         });
-        const user = userData.get({ plain: true });
+        const posts = userData.map((post) => post.get({ plain: true }));
         res.render('dashboard', {
-            ...user,
+            posts,
             logged_in: req.session.logged_in,
             // logged_name: req.session.logged_name,
         });
@@ -21,7 +21,7 @@ router.get('/', withAuth, async (req,res) => {
 });
 
 
-router.get('/newpost', withAuth, (req, res) => {
+router.get('/newpost', withAuth, (req, res) => { 
     try {
         if(req.session.logged_in) {
             res.render('newPost',{
