@@ -1,5 +1,5 @@
 {{#if posts.length}}
-<div class="d-flex justify-content-between bg-success p-3 bg-opacity-50 text-white fw-bold">
+<div id="yourPosts" class="d-flex justify-content-between p-3 text-white fw-bold">
     <h2 class="mx-3">Your Posts</h2>
     <a href="/dashboard/newpost">Create New Post</a>
 </div>
@@ -21,8 +21,8 @@
         {{/each}}
     </div>
 {{else}}
-<div class="d-flex justify-content-between bg-success p-3 bg-opacity-50 text-white fw-bold">
-    <h2 class="mx-3">You do not have posts yet</h2>
+<div id="yourPosts" class="d-flex justify-content-between p-3 text-white fw-bold">
+    <h4 class="mx-3">You do not have any posts yet. Why don't you create one!</h4>
     <a href="/dashboard/newpost"> Create New Post</a>
 </div>
 
@@ -30,4 +30,3 @@
 </div>
 
 <script src="/js/newPost.js"></script>
-<script src="/js/deletePost.js"></script>

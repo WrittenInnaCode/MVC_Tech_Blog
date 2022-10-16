@@ -1,4 +1,4 @@
-<!-- Loop over each object in the projects array -->
+<!-- Loop over each object in the posts array -->
 {{#each posts as |post| }}
 <div class="px-5 pb-5 m-4" id="post-card">
     <div class="card shadow border border-secondary">
@@ -14,5 +14,7 @@
     </div>
 </div>
 {{else}}
-<h6 class="pb-4 has-text-centered is-italic">there are currently no posts</h6>
+<div class="bg-info p-3 bg-opacity-50 text-white fw-bold">
+   <h4 class="text-center">There are no posts yet!</h4>
+</div>
 {{/each}}
