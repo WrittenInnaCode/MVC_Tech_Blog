@@ -14,47 +14,48 @@
 </head>
 
 <body>
+    <div id="page-container">
+        <div id="content-wrap">
+            <nav class="navbar navbar-expand-lg bg-light pb-2 ps-2 mb-5">
+                <div class="container-fluid">
+                    <a class="navbar-brand fw-lighter font-monospace fs-3" href="/">writteninnacode_TechBlog</a>
+                    <div id="navbarNav">
+                        <ul class="navbar-nav">
+                            <!-- Conditionally render login or logout links -->
+                            {{#if logged_in}}
+                            <li class="nav-item pe-2">
+                               <a class="nav-link fs-6" href="/dashboard">Dashboard</a>
+                            </li>
+                            <li class="nav-item pe-2">
+                                <button id="logout" class="btn btn-outline-danger fs-6">Logout <i class="fas fa-sign-out-alt"></i></button>
+                            </li>
+                            {{else}}
+                            <li class="nav-item pe-2">
+                                <a class="nav-link fs-6" href="/login">Login <i class="fas fa-sign-in-alt"></i></a>
+                            </li>
+                            {{/if}}
+                        </ul>
+                    </div>
+                </div>
+            </nav>
 
-    <nav class="navbar navbar-expand-lg bg-light pb-5">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/">writteninnacode_TechBlog</a>
-            <div id="navbarNav">
-                <ul class="navbar-nav">
-                    <!-- Conditionally render login or logout links -->
-                    {{#if logged_in}}
-                    <li class="nav-item">
-                        <a class="nav-link" href="/dashboard">Dashboard</a>
-                    </li>
-                    <li class="nav-item">
-                        <button id="logout" class="btn btn-outline-danger">Logout</button>
-                    </li>
-                    {{else}}
-                    <li class="nav-item">
-                        <a class="nav-link" href="/login">Login</a>
-                    </li>
-                    {{/if}}
-                </ul>
-            </div>
+
+            <main>
+                <!-- Render the sub layout -->
+                {{{ body }}}
+
+            </main>
+
+            <!-- Render script for logged in users only -->
+            {{#if logged_in}}
+            <script src="/js/logout.js"></script>
+            {{/if}}
+
         </div>
-    </nav>
-
-
-    <main>
-        <!-- Render the sub layout -->
-        {{{ body }}}
-
-    </main>
-
-    <!-- Render script for logged in users only -->
-    {{#if logged_in}}
-    <script src="/js/logout.js"></script>
-    {{/if}}
-
-
-    <footer class="flex-row justify-center">
-        &copy;
-        <script>document.write(new Date().getFullYear());</script> Inna Sherstnyova
-    </footer>
+        <footer id="footer" class="d-flex justify-content-center">&copy;
+            <script>document.write(new Date().getFullYear());</script> Inna Sherstnyova
+        </footer>
+    </div>
 
 
 </body>

@@ -1,12 +1,12 @@
 {{#if posts.length}}
 <div class="d-flex justify-content-between bg-success p-3 bg-opacity-50 text-white fw-bold">
     <h2 class="mx-3">Your Posts</h2>
-    <a href="/dashboard/newpost">+ New Post</a>
+    <a href="/dashboard/newpost">Create New Post</a>
 </div>
 
 {{!-- User's Posts --}}
 <div class="d-flex justify-content-center">
-    <div class="col-md-6 post-list p-5">
+    <div class="col-md-6 post-list m-3 p-5">
 
         {{#each posts as |post|}}
         <div class="row mb-2">
@@ -14,13 +14,20 @@
                 <h4><a href="/post/{{post.id}}">{{post.title}}</a></h4>
             </div>
             <div class="col-md-4">
-                <button class="btn btn-sm btn-danger" data-id="{{post.id}}">DELETE</button>
+                {{!-- <button class="btn btn-sm btn-danger" data-id="{{post.id}}">DELETE</button> --}}
+                <a class="list-item flex-row justify-space-between" href="/dashboard/edit/{{post.id}}">Edit Post</a>
             </div>
         </div>
         {{/each}}
     </div>
+{{else}}
+<div class="d-flex justify-content-between bg-success p-3 bg-opacity-50 text-white fw-bold">
+    <h2 class="mx-3">You do not have posts yet</h2>
+    <a href="/dashboard/newpost"> Create New Post</a>
+</div>
 
     {{/if}}
 </div>
 
-<script src="/js/dashboard.js"></script>
+<script src="/js/newPost.js"></script>
+<script src="/js/deletePost.js"></script>

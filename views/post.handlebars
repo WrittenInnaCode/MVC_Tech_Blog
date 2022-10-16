@@ -1,35 +1,36 @@
-<div class="bg-secondary bg-opacity-25">
-<div class="p-5" id="post-card">
-    <div class="card shadow mb-3">
+{{!-- the original post --}}
+
+<div class="p-5 m-3" id="post-card">
+    <div class="card shadow border border-secondary mb-3">
         <h4 class="card-header bg-info text-white">{{post.title}}</h4>
         <p class="card-text m-3">{{post.post_content}}</p>
-        <div class="bg-info bg-opacity-50">
+        <div class="bg-secondary bg-opacity-25">
             <div class="d-flex justify-content-end pe-3">
-                <div class="fw-bold text-white ms-4">{{post.user.username}}</div>
-                <div class="fw-bold text-white ms-4">{{format_date post.date_created}}</div>
+                <div class="text-secondary ms-4">{{post.user.username}}</div>
+                <div class="text-secondary ms-4">{{format_date post.date_created}}</div>
             </div>
         </div>
     </div>
-</div>
+
 </div>
 
 
+{{!-- comments --}}
 <div class="bg-success p-3 bg-opacity-50 text-white fw-bold">
-    <h2 class="mx-3">Comments</h2>
+    <h2>Comments</h2>
 </div>
 
-
-<div class="bg-secondary bg-opacity-25 pb-4">
+<div class="bg-secondary bg-opacity-25">
     {{#if post.comments}}
     <div class="card-body">
         {{#each post.comments}}
-        <div class="m-3 border border-success" id="comment-card">
+        <div class="m-4 border border-success" id="comment-card">
             <div class="bg-white">
                 <p class="p-3">{{comment_content}}</p>
                 <div class="bg-success bg-opacity-25">
                     <div class="d-flex justify-content-end pe-3">
-                        <div class="fw-bold text-white ms-4">{{user.username}}</div>
-                        <div class="fw-bold text-white ms-4">{{format_date createdAt}}</div>
+                        <div class="text-secondary ms-4">{{user.username}}</div>
+                        <div class="text-secondary ms-4">{{format_date createdAt}}</div>
                     </div>
                 </div>
             </div>
