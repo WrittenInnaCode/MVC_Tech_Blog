@@ -4,25 +4,25 @@
 
 <form class="edit-post p-5 m-3" id="post-card">
     <input type="hidden" name="post-id" id="post-id" value="{{post.id}}" />
-    <div class="card shadow border border-secondary mb-3">
-
-        <label class="form-label" for="post-title">Title</label>
-        <input type="text" name="post-title" value="{{post.title}}" class="form-input" />
-
-
-        <label class="form-label" for="post-body">Content</label>
-        <textarea name="post-content" class="form-input">{{post.post_content}}</textarea>
-
+    <div class="card shadow border border-secondary p-3 m-3">
+        <div class="mb-3">
+            <label class="form-label" for="post-title">Title</label>
+            <input type="text" name="post-title" value="{{post.title}}" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="post-body">Content</label>
+            <textarea name="post-content" class="form-control">{{post.post_content}}</textarea>
+        </div>
         <div class="bg-secondary bg-opacity-25">
-            <div class="d-flex justify-content-end pe-3">
-                <div class="text-secondary ms-3">Created by you on</div>
-                <div class="text-secondary ms-4">{{format_date post.date_created}}</div>
+            <div class="d-flex justify-content-end pe-3 text-secondary ms-3">
+                Originally created by you on {{format_date post.date_created}}
             </div>
         </div>
     </div>
-
+<div class="p-3">
     <button type="submit" class="btn btn-outline-success">Save Changes</button>
     <button id="delete-btn" type="button" class="delete-btn btn btn-outline-danger">Delete Post</button>
+</div>
 </form>
 
 

@@ -1,18 +1,8 @@
-<!-- Loop over each object in the posts array -->
-{{#each posts as |post| }}
-<div class="px-5 pb-5 m-4" id="post-card">
-    <div class="card shadow border border-secondary">
-        <h4 class="card-header bg-info text-white"><a href="/post/{{post.id}}" class="link-light">{{post.title}}</a></h4>
-        <p class="card-text m-3">{{post.post_content}}</p>
-        <div class="bg-secondary bg-opacity-25">
-            <div class="d-flex justify-content-end">
-                <div class="text-secondary me-4">{{post.user.username}}</div>
-                <div class="text-secondary me-4">{{format_date post.date_created}}</div>
-                <div class="text-secondary me-4"><a href="/post/{{post.id}}" class="link-secondary"> {{post.comments.length}} {{format_plural "comment" post.comments.length}}</a> </div>
-            </div>
-        </div>
-    </div>
-</div>
+{{#each posts as |post|}}
+
+{{> postInfo post }}
+
+
 {{else}}
 <div class="bg-info p-3 bg-opacity-50 text-white fw-bold">
    <h4 class="text-center">There are no posts yet!</h4>

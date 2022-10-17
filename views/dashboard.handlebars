@@ -1,7 +1,7 @@
 {{#if posts.length}}
 <div id="yourPosts" class="d-flex justify-content-between p-3 text-white fw-bold">
     <h2 class="mx-3">Your Posts</h2>
-    <a href="/dashboard/newpost">Create New Post</a>
+    <a id="newPost" href="/dashboard/newpost">Create New Post</a>
 </div>
 
 {{!-- User's Posts --}}
@@ -22,8 +22,8 @@
     </div>
 {{else}}
 <div id="yourPosts" class="d-flex justify-content-between p-3 text-white fw-bold">
-    <h4 class="mx-3">You do not have any posts yet. Why don't you create one!</h4>
-    <a href="/dashboard/newpost"> Create New Post</a>
+    <h4 class="mt-2" >You do not have any posts yet. Why don't you create one!</h4>
+    <a id="newPost" href="/dashboard/newpost"> Create New Post</a>
 </div>
 
     {{/if}}

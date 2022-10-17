@@ -23,3 +23,22 @@
   #yourPosts{
     background-color: rgb(243, 192, 255);
   }
+
+  #newPost{
+    background-color: white;
+    padding: 10px;
+    color: rgb(204, 92, 224);
+    /* border-color: rgb(183, 89, 204); */
+    border-radius: 5px;
+    border:2px solid rgb(224, 120, 242);
+    text-align:center;
+    text-decoration: none;
+  }
+
+  #newPost:hover {
+    background: rgb(224, 120, 242);
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+/* rgb(224, 120, 242) */
