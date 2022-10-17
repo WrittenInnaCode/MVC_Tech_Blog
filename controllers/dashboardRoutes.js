@@ -13,7 +13,6 @@ router.get('/', withAuth, async (req,res) => {
         res.render('dashboard', {
             posts,
             logged_in: req.session.logged_in,
-            // logged_name: req.session.logged_name,
         });
     } catch (error) {
         res.status(500).json(error);
