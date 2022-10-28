@@ -1,8 +1,8 @@
-<div class="bg-success p-3 bg-opacity-50 text-white fw-bold">
+<div class="comments p-3 bg-opacity-50 text-white fw-bold">
     <h2>Your Post</h2>
 </div>
 
-<form class="edit-post p-5 m-3" id="post-card">
+<form class="edit-post m-5 bg-white border" id="post-card">
     <input type="hidden" name="post-id" id="post-id" value="{{post.id}}" />
     <div class="p-3 m-3">
         <div class="mb-3">
@@ -13,7 +13,7 @@
             <label class="form-label" for="post-body">Content</label>
             <textarea name="post-content" class="form-control">{{post.post_content}}</textarea>
         </div>
-        <div class="bg-secondary bg-opacity-25">
+        <div class="bg-light">
             <div class="d-flex justify-content-end pe-3 text-secondary ms-3">
                 Originally created by you on {{format_date post.date_created}}
             </div>

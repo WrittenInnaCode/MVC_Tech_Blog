@@ -1,8 +1,8 @@
 {{!-- the original post --}}
-
+<div class="mx-5">
 <div class="p-4 m-3" id="post-card">
-    <div class="card shadow border border-secondary mb-3">
-        <div class="card-header bg-info text-white d-flex justify-content-between">
+    <div class="card border border-secondary mb-2 mx-5">
+        <div class="card-header bg-info opacity-75 text-white d-flex justify-content-between">
            <h4><a href="/post/{{id}}" class="link-light">{{title}}</a></h4>
            <div>
                 {{user.username}} | {{format_date date_created}}
@@ -11,4 +11,5 @@
         <p class="card-text m-3">{{post_content}}</p>
     </div>
 
+</div>
 </div>

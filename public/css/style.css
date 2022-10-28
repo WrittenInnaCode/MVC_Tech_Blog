@@ -41,4 +41,17 @@
     cursor: pointer;
     text-decoration: none;
 }
+
+.navbar-brand {
+  text-shadow: 2px 2px rgb(151, 222, 255);
+}
+
+.comments{
+  background-color: rgba(190, 164, 246, 0.683);
+}
+
+.navbar{
+  height: 5rem;
+}
+
 /* rgb(224, 120, 242) */

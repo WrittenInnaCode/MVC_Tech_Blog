@@ -5,27 +5,24 @@
 </div>
 
 {{!-- User's Posts --}}
-<div class="d-flex justify-content-center">
-    <div class="col-md-6 post-list m-3 p-5">
-
+<div class="d-flex justify-content-center align-items-center mt-5">
+<div class="card" style="width: 40rem;">
+    <ul class="list-group list-group-flush ">
         {{#each posts as |post|}}
-        <div class="row mb-2">
-            <div class="col-md-8">
-                <h4><a href="/post/{{post.id}}">{{post.title}}</a></h4>
-            </div>
-            <div class="col-md-4">
-                <a class="list-item flex-row justify-space-between" href="/dashboard/edit/{{post.id}}">Edit Post</a>
-            </div>
-        </div>
+        <li class="list-group-item d-flex justify-content-between">
+            <div><a href="/post/{{post.id}}"><span>{{post.title}}</span></a> </div>
+            <div><a href="/dashboard/edit/{{post.id}}"><button type="button" class="btn btn-outline-warning btn-sm">Edit Post</button></a></div>
+        </li>
         {{/each}}
-    </div>
-{{else}}
-<div id="yourPosts" class="d-flex justify-content-between p-3 text-white fw-bold">
-    <h4 class="mt-2" >You do not have any posts yet. Why don't you create one!</h4>
-    <a id="newPost" href="/dashboard/newpost"> Create New Post</a>
+    </ul>
 </div>
+</div>
+    {{else}}
+    <div id="yourPosts" class="d-flex justify-content-between p-3 text-white fw-bold">
+        <h4 class="mt-2">You do not have any posts yet. Why don't you create one!</h4>
+        <a id="newPost" href="/dashboard/newpost"> Create New Post</a>
+    </div>
 
     {{/if}}
-</div>
 
 <script src="/js/newPost.js"></script>

@@ -1,12 +1,13 @@
-<div class="bg-success p-3 bg-opacity-50 text-white fw-bold">
+    <div class="comments p-3 text-white fw-bold">
     <h2>Comments</h2>
 </div>
    {{#each this}}
-    <div class="card-body">
-        <div class="m-4 border border-success" id="comment-card">
+   <div class="mx-4">
+    <div class="card-body bg-light mx-5">
+        <div class="m-4 mx-5 border border-success" id="comment-card">
             <div class="bg-white">
                 <p class="p-3">{{comment_content}}</p>
-                <div class="bg-success bg-opacity-25">
+                    <div class="comments">
                     <div class="d-flex justify-content-end pe-3">
                         <div class="text-secondary ms-4">
                             {{user.username}} | {{format_date createdAt}}</div>
@@ -14,6 +15,7 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
     {{/each}}
 
