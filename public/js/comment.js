@@ -1,7 +1,9 @@
 const commentFormHandler = async function (event) {
   event.preventDefault();
 
-  const comment = document.querySelector('textarea').value.trim();
+  let comment = document.querySelector('textarea').value.trim();
+  // comment = comment.replace(/(\r\n|\r|\n)/g, '<br>');
+  // comment = encodeURIComponent(comment);
 
   const url = window.location.href.split('/')
 
@@ -29,4 +31,4 @@ const commentFormHandler = async function (event) {
   }
 }
 
-document.querySelector('#comment').addEventListener('click', commentFormHandler);
+document.querySelector('#comment').addEventListener('submit', commentFormHandler);

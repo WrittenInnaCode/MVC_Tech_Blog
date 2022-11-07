@@ -54,4 +54,8 @@
   height: 5rem;
 }
 
+.white-space{
+  white-space: pre-wrap;
+}
+
 /* rgb(224, 120, 242) */
