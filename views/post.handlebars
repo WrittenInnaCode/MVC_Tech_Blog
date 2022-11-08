@@ -10,10 +10,10 @@
 {{#if logged_in}}
 {{!-- add a comment --}}
 <div id="comment" class="mx-5">
-    <form class="p-5 mb-5 mx-5">
+    <form class="p-5 mb-5 mx-5 new-comment-form">
         <div class="mb-3">
             <label for="comment" class="form-label">Leave a comment:</label>
-            <textarea class="form-control"></textarea>
+            <textarea class="form-control" id="comment-content"></textarea>
         </div>
         <div aria-label="Basic outlined example">
             <button type="submit" class="btn btn-outline-success">Submit</button>
